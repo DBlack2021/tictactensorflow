@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import styles from '../style/TicTacToe.module.css'
 import Cell from './Cell'
+
 
 export default function TicTacToe() {
   const [board, setBoard] = useState([
@@ -18,15 +20,15 @@ export default function TicTacToe() {
   }
 
   return (
-    <div className='board'>
+    <div className={styles.board}>
       {
         // Draw the board
         board.map((row, rowIndex) => (
-          <div>
-            {row.map((cell, columnIndex) => (
-              <Cell turn = { cell } onClick = {() => handleClick(rowIndex, columnIndex)} />
-            ))}
-          </div>
+          row.map((cell, columnIndex) => (
+            <Cell id={`${rowIndex} ${columnIndex}`} 
+                  turn = { cell } 
+                  onClick = {() => handleClick(rowIndex, columnIndex)} />
+          ))
         ))
       }
     </div>

@@ -1,0 +1,14 @@
+:root {
+  --gap-size: 5px;
+}
+
+.board {
+  background-color: black;
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--gap-size);
+  row-gap: var(--gap-size);
+  /* border: 1px solid black; */
+}

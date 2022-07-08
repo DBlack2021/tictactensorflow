@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from '../style/Cell.module.css'
 
-export default function Cell({state}) {
+export default function Cell({state, onClick}) {
   return (
-    <div>
+    <div className={styles.cell} onClick={onClick}>
       { state }
     </div>
   )
