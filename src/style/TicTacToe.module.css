@@ -8,7 +8,7 @@
   width: 500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   column-gap: var(--gap-size);
   row-gap: var(--gap-size);
-  /* border: 1px solid black; */
 }

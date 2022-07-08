@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from '../style/Cell.module.css'
 
-export default function Cell({state, onClick}) {
+export default function Cell({turn, onClick}) {
   return (
     <div className={styles.cell} onClick={onClick}>
-      { state }
+      <h1 className={styles.heading}>{ turn }</h1>
     </div>
   )
 }

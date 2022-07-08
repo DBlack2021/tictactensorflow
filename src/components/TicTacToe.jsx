@@ -13,10 +13,15 @@ export default function TicTacToe() {
   const [turn, setTurn] = useState('X')
 
   const handleClick = (row, col) => {
-    const newBoard = [...board]
-    newBoard[row][col] = turn
-    setBoard(newBoard)
-    setTurn(turn === 'X' ? 'O' : 'X')
+    if (board[row][col] == '') {
+      const newBoard = [...board]
+      newBoard[row][col] = turn
+      setBoard(newBoard)
+      setTurn(turn === 'X' ? 'O' : 'X')
+    }
+  }
+
+  const checkWin = () => {
   }
 
   return (
@@ -25,7 +30,7 @@ export default function TicTacToe() {
         // Draw the board
         board.map((row, rowIndex) => (
           row.map((cell, columnIndex) => (
-            <Cell id={`${rowIndex} ${columnIndex}`} 
+            <Cell key={`${rowIndex},${columnIndex}`} 
                   turn = { cell } 
                   onClick = {() => handleClick(rowIndex, columnIndex)} />
           ))
